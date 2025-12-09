@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hungarian]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\setlength{\parindent}{12pt}
+\onehalfspacing
+
+\title{Vércukorszint dinamikák klaszterezése\\1-es típusú cukorbetegségben}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1-es típusú cukorbetegség}
+
+Az 1-es típusú cukorbetegség egy autoimmun betegség, amelyben a szervezet immunrendszere tévesen idegenként ismeri fel a hasnyálmirigy inzulint termelő béta-sejtjeit, és ezeket fokozatosan elpusztítja. Ennek következménye a teljes inzulinhiány, vagyis a szervezet nem képes a vércukorszint szabályozásához szükséges hormont előállítani. Mivel a szervezet nem termel inzulint, a vércukorszint könnyen és gyorsan ingadozhat, sokszor megjósolhatatlan módon emelkedik meg. A betegség bármely életkorban kialakulhat, azonban leggyakrabban gyermekeknél és fiatal felnőtteknél diagnosztizálják. Az érintettek általában sovány testalkatúak, és a tünetek viszonylag rövid idő alatt jelentkeznek. A diagnózis felállítása után a kezelés azonnal inzulinnal kezdődik, hiszen az inzulin iránti érzékenység megmarad, és külső pótlás nélkül a szervezet nem tudja fenntartani a normál anyagcsere-folyamatokat. Kezelés nélkül súlyos, életveszélyes állapot, az úgynevezett ketoacidózis alakulhat ki, amely sürgős orvosi beavatkozást igényel.
+
+Előfordulását tekintve az 1-es típusú diabétesz az összes cukorbeteg körülbelül 10%-át teszi ki Európában és Amerikában. A betegség gyakorisága földrajzilag jelentősen eltérő: a legmagasabb arányban Skandináviában fordul elő, míg Japánban és Koreában szinte ritkaságnak számít. Magyarországon is folyamatosan emelkedik az új esetek száma, különösen gyermek- és serdülőkorban. A 20 éves kor alatti cukorbetegek körében ez a típus fordul elő leggyakrabban, ezért kiemelten fontos a korai felismerés és a gyors kezelés.
+
+A betegség kialakulását több tényező együttese okozza. Bár maga a diabétesz nem öröklődik közvetlenül, a genetikai hajlam jelentősen növeli a kockázatot: bizonyos HLA-gének jelenléte érzékenyebbé teheti az immunrendszert. A genetikai háttér mellett környezeti tényezők is szerepet játszanak. Ezek közé tartozhatnak vírusfertőzések, amelyek autoimmun folyamatot indíthatnak el, valamint egyes korai táplálkozási hatások, például a csecsemőkori tehéntej fogyasztása. A glutén egyik fehérjéje, a gliadin szintén szerepet kaphat a folyamat beindításában, bár pontos mechanizmusa még nem teljesen ismert. A gluténérzékenység (coeliakia) és az 1-es típusú diabétesz gyakran együtt jelentkezik, az érintettek mintegy 8%-ánál. Emiatt, ha az egyik betegséget diagnosztizálják, ajánlott a másikra is szűrővizsgálatot végezni.
+
+A betegség egy speciális formája a felnőttkorban jelentkező, lassabban romló autoimmun diabétesz, a LADA (latent autoimmune diabetes in adults). Ennél a változatnál a béta-sejtek pusztulása lassabban zajlik, ezért a tünetek gyakran enyhébbek, és emiatt sokszor tévesen 2-es típusú cukorbetegségként kezelik. A betegség azonban előbb-utóbb itt is teljes inzulinhiányhoz vezet, így a megfelelő diagnózis kiemelten fontos a kezelés szempontjából.
+
+\section*{1-es típusú cukorbetegség kezelése}
+
+A kezelés középpontjában az inzulin pótlása áll, amelyet a beteg injekció formájában, inzulintollal vagy inzulinpumpával juttathat be a szervezetébe. Mivel az inzulinadagolás pontos beállítása létfontosságú, a rendszeres vércukormérés elengedhetetlen. A vércukorszintet naponta többször – általában 4–12 alkalommal – szükséges ellenőrizni. A modern eszközök, például a folyamatos vércukormonitorozó rendszerek (CGM) jelentősen megkönnyítik a vércukorszint követését, mivel néhány percenként információt adnak a vércukorszint aktuális alakulásáról. A legpontosabb és legstabilabb vércukorkontroll általában az inzulinpumpa és a CGM együttes használatával érhető el, mivel ezek a rendszerek képesek valós időben reagálni a vércukorszint változásaira, és így csökkentik a hipo- és hiperglikémia kockázatát.
+
+\section*{Szimulátor 1: py-mGIPsim}
+
+Az mGIPsim (Metabolic Glucose–Insulin Physiology Simulator) egy nyílt forráskódú metabolikus szimulátor, amely 20 virtuális, 1-es típusú cukorbeteg páciens vércukor- és inzulinszintjét modellezi különféle terápiás, étkezési és fizikai aktivitási körülmények között.
+
+Python nyelven készült, vektorizált JIT-fordítással optimalizált számítási modellel. Moduláris felépítésű, bővíthető új modellekkel és algoritmusokkal.
+
+Felhasználási módok:
+
+\begin{itemize}
+    \item Streamlit alapú grafikus felület,
+    \item Interaktív parancssori mód,
+    \item Egyszerű CLI mód egy parancssorból.
+\end{itemize}
+
+Támogatott terápiák:
+
+\begin{itemize}
+    \item MDI (Multiple Daily Injections),
+    \item SAP (Sensor-Augmented Pump Therapy),
+    \item Hybrid Closed-Loop rendszerek.
+\end{itemize}
+
+A szimuláció képes étkezések, mozgás és inzulinadagolás hatását több napon át modellezni, egyéni fiziológiai különbségek figyelembevételével.
+
+\section*{Szimulátor 2: DMMS.R}
+
+(A dokumentumban nem szerepel részletes leírás.)
+
+\section*{Szimulátorok összehasonlítása}
+
+(A dokumentumban nem szerepel tartalom.)
+
+\section*{Források}
+
+\begin{itemize}
+    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_diabetes_mellitus}
+    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_cukorbetegség}
+\end{itemize}
+
+\end{document}
