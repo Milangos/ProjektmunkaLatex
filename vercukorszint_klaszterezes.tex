@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hungarian]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\setlength{\parindent}{12pt}
+\onehalfspacing
+
+\title{Vércukorszint dinamikák klaszterezése\\1-es típusú cukorbetegségben}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1-es típusú cukorbetegség}
+
+Az 1-es típusú diabetes mellitus (más néven inzulinfüggő diabetes mellitus) egy autoimmun betegség, amelyet abszolút inzulinhiány okoz. Hátterében az áll, hogy a szervezet immunrendszere idegenként ismeri fel a saját sejtek egy részét, és autoimmun gyulladás következtében elpusztulnak a hasnyálmirigy inzulint termelő béta-sejtjei. Az inzulin abszolút hiánya és a hipoglikémiára adott elégtelen válasz miatt a vércukorszint gyakran megjósolhatatlanul és szabálytalanul ingadozik. Ez a diabétesz bármely életkorban előfordulhat, de leggyakrabban gyermek- és fiatal felnőttkorban jelentkezik.
+
+Korábban egészséges embereket támad meg, normál testsúllyal. A betegek általában soványak, gyakori a jelentős fogyás a betegség megállapítása előtt. A tünetek gyorsan alakulnak ki, a betegek kezeléséhez inzulin szükséges. Kezeletlen vagy rosszul kezelt esetben ketoacidózisos kóma alakulhat ki.
+
+Az 1-es típusú diabétesz általában a diabéteszes esetek 10\%-át teszi ki Európában és Amerikában. Leggyakoribb Skandináviában, míg ritka Japánban és Koreában. Európán belül is jelentősen változó gyakoriságú, több mint tízszer gyakoribb Finnországban, mint Macedóniában. Magyarországon is egyre nő ennek a típusnak a gyakorisága.
+
+A korábbi fiatalkori cukorbetegség elnevezést ma már nem használják, ugyanis bármely életkorban elkezdődhet. Az 1-es típusú diabétesz kialakulását összefüggésbe hozzák a csecsemőkori tehéntejfogyasztással. Egy svéd diabetológus csoport szerint hatékonyabban kezelhető alacsony szénhidrát étrenddel, mint a jelenlegi magas szénhidrát alapú protokollal.
+
+Jelenleg nincs olyan eljárás, amely meggyógyítaná a cukorbetegséget. Számos kísérlet irányul az inzulintermelés helyreállítására, de tartós eredmény nincs. A kutatás érinti a mesterséges hasnyálmirigy rendszereket és védett béta-sejtköteg beültetést is.
+
+Az 1-es típus nehezebben tartható karban, mint a 2-es. Gyakori az inzulinszint indokolatlan változása, ami növeli a ketoacidózis kockázatát. Egyéb szövődmények: fertőzések, gyomorbénulás, hormonproblémák (pl. Addison-kór). Genetikai tényezők növelhetik a hajlamot, például bizonyos HLA genotípusok.
+
+Táplálkozási tényezők és vírusok szerepét is vizsgálják, de bizonyítékok nem teljesek. A gluténben található gliadin kapcsolatba hozható, emiatt gyakoribb lehet a lisztérzékenység.
+
+A betegség bármely életkorban kezdődhet, gyakran felnőttkorban fedezik fel. Ezt a formát LADA-nak (Latent Autoimmune Diabetes in Adults) nevezik.
+
+\section*{1-es típusú cukorbetegség kezelése}
+
+A kezelés azonnali inzulinnal kezdődik. Az inzulin bevihető injekcióval, inzulintollal vagy inzulinpumpával. A kezelés mellett szükséges a rendszeres vércukormérés (napi 4–12 alkalom). Ez történhet ujjbegyszúrással vagy folyamatos vércukormonitorozással (CGM).
+
+A legjobb eredmény CGM + inzulinpumpa kombinációjával érhető el.
+
+Alacsony szénhidrát étrenddel néhány esetben javulásról számoltak be. Magyarországon dr. Tóth Csaba paleo-ketogén étrenddel kezelt betegeknél inzulintermelés visszatérését dokumentálták.
+
+\section*{Szimulátor 1: py-mGIPsim}
+
+Az mGIPsim (Metabolic Glucose–Insulin Physiology Simulator) egy nyílt forráskódú metabolikus szimulátor, amely 20 virtuális, 1-es típusú cukorbeteg páciens vércukor- és inzulinszintjét modellezi különféle terápiás, étkezési és fizikai aktivitási körülmények között.
+
+Python nyelven készült, vektorizált JIT-fordítással optimalizált számítási modellel. Moduláris felépítésű, bővíthető új modellekkel és algoritmusokkal.
+
+Felhasználási módok:
+
+\begin{itemize}
+    \item Streamlit alapú grafikus felület,
+    \item Interaktív parancssori mód,
+    \item Egyszerű CLI mód egy parancssorból.
+\end{itemize}
+
+Támogatott terápiák:
+
+\begin{itemize}
+    \item MDI (Multiple Daily Injections),
+    \item SAP (Sensor-Augmented Pump Therapy),
+    \item Hybrid Closed-Loop rendszerek.
+\end{itemize}
+
+A szimuláció képes étkezések, mozgás és inzulinadagolás hatását több napon át modellezni, egyéni fiziológiai különbségek figyelembevételével.
+
+\section*{Szimulátor 2: DMMS.R}
+
+(A dokumentumban nem szerepel részletes leírás.)
+
+\section*{Szimulátorok összehasonlítása}
+
+(A dokumentumban nem szerepel tartalom.)
+
+\section*{Források}
+
+\begin{itemize}
+    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_diabetes_mellitus}
+    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_cukorbetegség}
+\end{itemize}
+
+\end{document}
+
