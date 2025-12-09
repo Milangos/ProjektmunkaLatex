@@ -8,6 +8,9 @@
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{indentfirst}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
 \setlength{\parindent}{12pt}
 \onehalfspacing
 
@@ -71,11 +74,89 @@ A szimuláció képes étkezések, mozgás és inzulinadagolás hatását több 
 
 \section*{Szimulátor 2: DMMS.R}
 
-(A dokumentumban nem szerepel részletes leírás.)
+
+A \textbf{DMMS.R} (Diabetes Mellitus Metabolic Simulator -- Research) egy kutatási célokra fejlesztett, professzionális metabolikus szimulátor. Az alkalmazás képes 1-es és 2-es típusú cukorbetegség, valamint a prediabétesz élettani folyamatait modellezni virtuális pácienseken. A szimulátor 55 virtuális alanyt tartalmaz, különböző betegcsoportokra bontva: 1-es típusú gyermek, serdülő és felnőtt, 2-es típusú felnőtt, valamint prediabéteszes felnőtt. Mindegyik alany egyedi, előre megadott anyagcsere-paraméterekkel rendelkezik. A szimulátor célja klinikai kísérletek előzetes és biztonságos támogatása.
+
+\medskip
+A szimuláció alapját egy kompartmentalizált glükóz--inzulin anyagcsere modell képezi, amely a hormonok, vércukorszint és az inzulin dinamikáját perces időfelbontásban követi. A modell figyelembe veszi az étkezéseket, a fizikai aktivitást, az inzulinadagolást, a gyógyszeres kezelést és a cirkadián ritmust is. A rendszer támogatja az inzulin farmakokinetikáját és farmakodinamikáját, a biohasznosulást, a lassú felszabadulású készítményeket, valamint az aktív inzulin mennyiségének számítását.
+
+\section{Moduláris felépítés}
+
+A \textbf{DMMS.R moduláris felépítésű, három fő elemből áll:}
+\begin{enumerate}
+    \item Virtuális páciensek adatbázisa, amely tartalmazza a különböző anyagcsere-jellemzőket.
+    \item Matematikai szimulációs motor, amely kiszámítja a fiziológiai folyamatokat.
+    \item Grafikus felület, amelyen keresztül konfigurálható a szimuláció.
+\end{enumerate}
+
+\section{Konfigurálható szenzorok és vezérlők}
+
+A szimulátor többféle szenzor-, vezérlő- és adagolóelem konfigurálását teszi lehetővé:
+\begin{enumerate}
+    \item Ideális és zajjal terhelt CGM és SMBG szenzorok.
+    \item Étkezési, korrekciós és bázisinzulin vezérlők.
+    \item Inzulinpumpák és injekciós adagoló rendszerek.
+\end{enumerate}
+
+A programban megadhatók gyógyszeres kezelések, edzésprogramok és étkezések a páciensek számára. A szimuláció során zaj is alkalmazható a valós mérési és adagolási bizonytalanság modellezésére.
+
+\section{Eredmények és felhasználás}
+
+A szimulációk eredményei részletes idősor-grafikonokon, \emph{CVGA} (Control-Variability Grid Analysis) elemzésen, valamint egyéni és populációs szintű statisztikai mutatókon jelennek meg. Az adatok \texttt{CSV} és \texttt{MATLAB} formátumban exportálhatók.
+
+A \textbf{DMMS.R} elsősorban kutatási, fejlesztési és orvostechnikai validációs célokat szolgál. Alkalmas inzulinpumpák, gyógyszeres terápiák és digitális diabétesz-menedzsment rendszerek előzetes vizsgálatára és tesztelésére, anélkül, hogy valós betegeken kellene kísérletezni. A program kifejezetten klinikai kutatási környezetbe készült.
+
 
 \section*{Szimulátorok összehasonlítása}
 
-(A dokumentumban nem szerepel tartalom.)
+\begin{table}[h!]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{l X X}
+\hline
+\textbf{Szempont} & \textbf{py-mGIPsim} & \textbf{DMMS.R} \\
+\hline
+Fő cél &
+\makecell[l]{Oktatási, kutatási és fejlesztési\\célú, rugalmas szimuláció} &
+\makecell[l]{Klinikai kutatási és validációs célú,\\ professzionális szimulátor} \\
+
+Modellezett betegek &
+\makecell[l]{20 virtuális 1-es típusú\\cukorbeteg} &
+\makecell[l]{55 virtuális beteg: 1-es típus, 2-es típus,\\ prediabétesz} \\
+
+Részletesség &
+\makecell[l]{Közepes–magas szintű\\fiziológiai modell} &
+\makecell[l]{Nagyon részletes, klinikailag orientált\\ kompartment modellek} \\
+
+Felhasználói felület &
+\makecell[l]{GUI, interaktív CMD,\\egyszerű CLI} &
+\makecell[l]{Dedikált grafikus felület} \\
+
+Terápia / vezérlés &
+\makecell[l]{MDI, SAP, Hybrid Closed-loop} &
+\makecell[l]{Inzulinpumpák, injekciók, CGM/SGBM,\\ gyógyszerek} \\
+
+Zaj és realitás &
+\makecell[l]{Főként determinisztikus \\modellezés} &
+\makecell[l]{Mérési és adagolási zaj} \\
+
+Eredmények &
+\makecell[l]{Vércukor-időfüggvények, jól\\ vizualizálható kimenet} &
+\makecell[l]{Részletes idősorok, statisztikai elemzések} \\
+
+Bővíthetőség &
+\makecell[l]{Nagyon jól bővíthető, \\fejlesztőbarát} &
+\makecell[l]{Strukturált, klinikai környezethez kötött} \\
+
+Technológia &
+\makecell[l]{Python, JIT-optimalizált futás} &
+\makecell[l]{Kutatásra fókuszált matematikai motor} \\
+\hline
+\end{tabularx}
+\end{table}
+
+
 
 \section*{Források}
 

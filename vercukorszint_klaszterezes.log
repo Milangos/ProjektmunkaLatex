@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 14:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,45 +306,69 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (D:\latex\tex/latex/tools\indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+) (D:\latex\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen165
+\ar@mcellbox=\box55
+\extrarowheight=\dimen166
+\NC@list=\toks25
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box56
+) (D:\latex\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen167
+\TX@old@table=\dimen168
+\TX@old@col=\dimen169
+\TX@target=\dimen170
+\TX@delta=\dimen171
+\TX@cols=\count311
+\TX@ftn=\toks26
+)
+(D:\latex\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen172
+\c@nlinenum=\count312
+\TeXr@lab=\toks27
 )
 (D:\latex\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count311
+\l__color_backend_stack_int=\count313
 )
 (vercukorszint_klaszterezes.aux)
 \openout1 = `vercukorszint_klaszterezes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
  (D:\latex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count312
-\scratchdimen=\dimen165
-\scratchbox=\box55
-\nofMPsegments=\count313
-\nofMParguments=\count314
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count315
-\MPscratchDim=\dimen166
-\MPnumerator=\count316
-\makeMPintoPDFobject=\count317
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count314
+\scratchdimen=\dimen173
+\scratchbox=\box57
+\nofMPsegments=\count315
+\nofMParguments=\count316
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen174
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
+\everyMPtoPDFconversion=\toks29
 ) (D:\latex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -353,75 +377,130 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (D:\latex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 21.
+ (vercukorszint_klaszterezes.out) (vercukorszint_klaszterezes.out)
 \@outlinefile=\write3
 \openout3 = `vercukorszint_klaszterezes.out'.
 
-
-(D:\latex\tex/latex/base\article.cls
+ (D:\latex\tex/latex/base\article.cls
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
 Package babel Info: 'hungarian' activates 'hungarian' shorthands.
-(babel)             Reported on input line 18.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+(babel)             Reported on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
- (D:\latex\tex/latex/amsfonts\umsa.fd
+
+(D:\latex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
 
-
-(D:\latex\tex/latex/amsfonts\umsb.fd
+ (D:\latex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+[1
 
 
 {C:/Users/szabo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (4.11075pt too wide) in paragraph at lines 83--84
+[3]
+Overfull \hbox (16.12695pt too wide) in paragraph at lines 87--88
+[]\T1/cmr/m/n/12 Virtuális pá-ci-en-sek adat-bá-zi-sa, amely tar-tal-maz-za a k
+ü-lön-bö-z® anyagcsere-
+ []
+
+[4]
+Overfull \hbox (2.12294pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (20.063pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (42.69637pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (30.33827pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (3.3171pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (44.61256pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (45.39015pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (43.02962pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (1.34535pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (40.05812pt too wide) in paragraph at lines 156--156
+|[][]
+ []
+
+
+Overfull \hbox (4.11075pt too wide) in paragraph at lines 164--165
 [][]$\T1/cmtt/m/n/12 https : / / hu . wikipedia . org / wiki / Cukorbetegs % C3
  % A9g # 1-[]es _ t % C3 %
  []
 
 
-Overfull \hbox (4.11075pt too wide) in paragraph at lines 84--85
+Overfull \hbox (4.11075pt too wide) in paragraph at lines 165--166
 [][]$\T1/cmtt/m/n/12 https : / / hu . wikipedia . org / wiki / Cukorbetegs % C3
  % A9g # 1-[]es _ t % C3 %
  []
 
-[3] (vercukorszint_klaszterezes.aux)
+[5] [6] (vercukorszint_klaszterezes.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
-
-
-Package rerunfilecheck Warning: File `vercukorszint_klaszterezes.out' has chang
-ed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `vercukorszint_klaszterezes.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `vercukorszint_klaszterezes.out' has not chan
+ged.
+(rerunfilecheck)             Checksum: 1110425D5386488F6328018A122BAC07;591.
  ) 
 Here is how much of TeX's memory you used:
- 11907 strings out of 467870
- 184214 string characters out of 5435671
- 610825 words of memory out of 5000000
- 40643 multiletter control sequences out of 15000+600000
- 639464 words of font info for 76 fonts, out of 8000000 for 9000
+ 12240 strings out of 467870
+ 188662 string characters out of 5435671
+ 623350 words of memory out of 5000000
+ 40945 multiletter control sequences out of 15000+600000
+ 643108 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,758b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
-1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecbx1728.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm2074.pk>
-Output written on vercukorszint_klaszterezes.pdf (3 pages, 68231 bytes).
+ 75i,17n,79p,782b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+1000.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecbx1000.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ectt1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecti1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\szabo\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\szabo\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\szabo\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk>
+Output written on vercukorszint_klaszterezes.pdf (6 pages, 122889 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 22 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
