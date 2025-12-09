@@ -1,68 +1,105 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[hungarian]{babel}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{hyperref}
 \usepackage{setspace}
-\usepackage{indentfirst}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{makecell}
-\setlength{\parindent}{12pt}
-\onehalfspacing
-
-\title{Vércukorszint dinamikák klaszterezése\\1-es típusú cukorbetegségben}
-\author{}
-\date{}
+\usepackage{url}
+\usepackage{float}
 
 \begin{document}
 
+\title{Clustering of Blood Glucose Dynamics in Type 1 Diabetes}
+
+\author{
+\IEEEauthorblockN{Szabó Ákos}
+\IEEEauthorblockA{\textit{John von Neumann Faculty of Informatics} \\
+\textit{Óbudai Egyetem} \\
+Budapest, Hungary \\
+szabakos@stud.uni-obuda.hu}
+\and
+\IEEEauthorblockN{Csepely Milán}
+\IEEEauthorblockA{\textit{John von Neumann Faculty of Informatics} \\
+\textit{Óbudai Egyetem} \\
+Budapest, Hungary \\
+milan.csepely@stud.uni-obuda.hu}
+\and
+\IEEEauthorblockN{Martines Gergő}
+\IEEEauthorblockA{\textit{John von Neumann Faculty of Informatics} \\
+\textit{Óbudai Egyetem} \\
+Budapest, Hungary \\
+martinesgergo@stud.uni-obuda.hu}
+\and
+\IEEEauthorblockN{Szász Dávid Máté}
+\IEEEauthorblockA{\textit{John von Neumann Faculty of Informatics} \\
+\textit{Óbudai Egyetem} \\
+Budapest, Hungary \\
+szaszdavid@stud.uni-obuda.hu}
+}
+
+
 \maketitle
 
-\section*{1-es típusú cukorbetegség}
+\begin{abstract}
+This document presents the clustering analysis of Type 1 Diabetes and the associated metabolic simulators. We introduce the py-mGIPsim and DMMS.R systems and provide a comparative overview of their functionalities.
+\end{abstract}
 
-Az 1-es típusú diabetes mellitus (más néven inzulinfüggő diabetes mellitus) egy autoimmun betegség, amelyet abszolút inzulinhiány okoz. Hátterében az áll, hogy a szervezet immunrendszere idegenként ismeri fel a saját sejtek egy részét, és autoimmun gyulladás következtében elpusztulnak a hasnyálmirigy inzulint termelő béta-sejtjei. Az inzulin abszolút hiánya és a hipoglikémiára adott elégtelen válasz miatt a vércukorszint gyakran megjósolhatatlanul és szabálytalanul ingadozik. Ez a diabétesz bármely életkorban előfordulhat, de leggyakrabban gyermek- és fiatal felnőttkorban jelentkezik.
 
-Korábban egészséges embereket támad meg, normál testsúllyal. A betegek általában soványak, gyakori a jelentős fogyás a betegség megállapítása előtt. A tünetek gyorsan alakulnak ki, a betegek kezeléséhez inzulin szükséges. Kezeletlen vagy rosszul kezelt esetben ketoacidózisos kóma alakulhat ki.
+\begin{IEEEkeywords}
+cukorbetegség, 1-es típus, szimulátor, metabolikus modell, DMMS.R, py-mGIPsim
+\end{IEEEkeywords}
 
-Az 1-es típusú diabétesz általában a diabéteszes esetek 10\%-át teszi ki Európában és Amerikában. Leggyakoribb Skandináviában, míg ritka Japánban és Koreában. Európán belül is jelentősen változó gyakoriságú, több mint tízszer gyakoribb Finnországban, mint Macedóniában. Magyarországon is egyre nő ennek a típusnak a gyakorisága.
+\section*{Type 1 diabetes\cite{diabetes_type1}}
 
-A korábbi fiatalkori cukorbetegség elnevezést ma már nem használják, ugyanis bármely életkorban elkezdődhet. Az 1-es típusú diabétesz kialakulását összefüggésbe hozzák a csecsemőkori tehéntejfogyasztással. Egy svéd diabetológus csoport szerint hatékonyabban kezelhető alacsony szénhidrát étrenddel, mint a jelenlegi magas szénhidrát alapú protokollal.
+Type 1 diabetes is an autoimmune disease in which the body’s immune system mistakenly attacks the insulin-producing beta cells in the pancreas. These beta cells make insulin, a hormone that allows blood sugar (glucose) to enter the body’s cells and provide energy. When enough beta cells are destroyed, the pancreas produces little or no insulin, making it necessary to take insulin to survive.
 
-Jelenleg nincs olyan eljárás, amely meggyógyítaná a cukorbetegséget. Számos kísérlet irányul az inzulintermelés helyreállítására, de tartós eredmény nincs. A kutatás érinti a mesterséges hasnyálmirigy rendszereket és védett béta-sejtköteg beültetést is.
+Without sufficient insulin, glucose cannot move from the bloodstream into the cells, causing blood sugar levels to rise. This condition, called hyperglycemia, can lead to long-term damage to the heart, kidneys, eyes, nerves, and other organs if left untreated.
 
-Az 1-es típus nehezebben tartható karban, mint a 2-es. Gyakori az inzulinszint indokolatlan változása, ami növeli a ketoacidózis kockázatát. Egyéb szövődmények: fertőzések, gyomorbénulás, hormonproblémák (pl. Addison-kór). Genetikai tényezők növelhetik a hajlamot, például bizonyos HLA genotípusok.
+Type 1 diabetes is often diagnosed in children, teenagers, and young adults, but it can develop at any age. The exact cause of the disease is not fully understood, and researchers are still studying what triggers the immune system to attack the pancreas. Currently, there is no known way to prevent type 1 diabetes.
 
-Táplálkozási tényezők és vírusok szerepét is vizsgálják, de bizonyítékok nem teljesek. A gluténben található gliadin kapcsolatba hozható, emiatt gyakoribb lehet a lisztérzékenység.
+People with type 1 diabetes can live long and healthy lives by carefully managing their condition. A treatment plan, developed with a healthcare team, usually includes taking insulin, following a balanced diet, staying physically active, and monitoring blood glucose levels regularly. Having a strong support system from family, friends, and healthcare providers is also essential for maintaining health and achieving personal goals.
 
-A betegség bármely életkorban kezdődhet, gyakran felnőttkorban fedezik fel. Ezt a formát LADA-nak (Latent Autoimmune Diabetes in Adults) nevezik.
+\section*{Treatment of Type 1 diabetes\cite{treatment_type1}}
 
-\section*{1-es típusú cukorbetegség kezelése}
+Managing Type 1 diabetes (T1D) primarily revolves around insulin therapy, which replaces the insulin your body no longer produces. Since T1D is a self-managed condition, you'll make daily decisions about your insulin needs to keep your blood sugar levels in a target range.
 
-A kezelés azonnali inzulinnal kezdődik. Az inzulin bevihető injekcióval, inzulintollal vagy inzulinpumpával. A kezelés mellett szükséges a rendszeres vércukormérés (napi 4–12 alkalom). Ez történhet ujjbegyszúrással vagy folyamatos vércukormonitorozással (CGM).
-
-A legjobb eredmény CGM + inzulinpumpa kombinációjával érhető el.
-
-Alacsony szénhidrát étrenddel néhány esetben javulásról számoltak be. Magyarországon dr. Tóth Csaba paleo-ketogén étrenddel kezelt betegeknél inzulintermelés visszatérését dokumentálták.
-
-\section*{Szimulátor 1: py-mGIPsim}
-
-Az mGIPsim (Metabolic Glucose–Insulin Physiology Simulator) egy nyílt forráskódú metabolikus szimulátor, amely 20 virtuális, 1-es típusú cukorbeteg páciens vércukor- és inzulinszintjét modellezi különféle terápiás, étkezési és fizikai aktivitási körülmények között.
-
-Python nyelven készült, vektorizált JIT-fordítással optimalizált számítási modellel. Moduláris felépítésű, bővíthető új modellekkel és algoritmusokkal.
-
-Felhasználási módok:
+Insulin comes in various forms, each with different speeds of onset and duration of action. You'll likely need a combination:
 
 \begin{itemize}
-    \item Streamlit alapú grafikus felület,
-    \item Interaktív parancssori mód,
-    \item Egyszerű CLI mód egy parancssorból.
+    \item Basal Insulin (Long-Acting): Provides a continuous, background level of insulin to manage glucose between meals and overnight.
+    \item Bolus Insulin (Mealtime and Correction): Specific doses you take when you eat (to cover carbohydrates) and to correct elevated blood sugar levels.
 \end{itemize}
 
-Támogatott terápiák:
+You can administer insulin in several ways:
+
+\begin{itemize}
+    \item Multiple Daily Injections (MDI): Involves drawing a dose from an insulin vial using a syringe for injection into the fatty tissue beneath the skin.
+    \item Insulin Pens: Pre-filled devices used to inject specific doses into the fatty tissue.
+    \item Insulin Pumps: A device that delivers insulin continuously through a small tube inserted under the skin, aiming to mimic the natural function of the pancreas. Doses can also be delivered on demand.
+\end{itemize}
+
+\section*{First simulator: py-mGIPsim}
+
+The mGIPsim (Metabolic Glucose-Insulin Physiology Simulator) is an open-source metabolic simulator that models the changes in blood glucose and insulin levels of 20 virtual Type 1 Diabetes (T1D) patients under various therapeutic, dietary, and physical activity conditions. The system's purpose is to provide a realistic simulation environment for research, education, and development purposes, where users can examine the dynamics of glucose-insulin regulation using customizable parameters.
+
+The simulator is written in Python and uses a vectorized, JIT (Just-In-Time) compiled computational model, which enables fast and efficient execution even with large amounts of simulation data. The system has a modular structure, making it easy to extend with new patient models, insulin dosing strategies, or control algorithms.
+
+The software offers several user interfaces:
+
+\begin{itemize}
+    \item Graphical User Interface (GUI) – A Streamlit-based web application that allows for interactive parameter setting and visualization.
+    \item Interactive Command Line Mode (CMD) – A console user interface where the simulation can be configured step-by-step.
+    \item Simple Command Line Interface (CLI) – A simulation that can be run from a single command line with predefined parameters.
+\end{itemize}
+
+mGIPsim supports various insulin therapy protocols, including:
 
 \begin{itemize}
     \item MDI (Multiple Daily Injections),
@@ -70,100 +107,242 @@ Támogatott terápiák:
     \item Hybrid Closed-Loop rendszerek.
 \end{itemize}
 
-A szimuláció képes étkezések, mozgás és inzulinadagolás hatását több napon át modellezni, egyéni fiziológiai különbségek figyelembevételével.
+By varying parameters for meals, exercise, and insulin administration, the simulation can demonstrate the time-course of blood glucose levels over several days. The model also takes into account individual physiological differences, so each of the 20 virtual patients has a distinct metabolic dynamic.
 
-\section*{Szimulátor 2: DMMS.R}
+The project is a valuable tool for research and development for testing insulin dosing algorithms, simulating diabetes management strategies, and teaching digital healthcare systems. For developers, the modular code structure and documented API interface allow for the integration of new models or the customization of the simulation logic.
 
+\section*{Second simulator: DMMS.R}
 
-A \textbf{DMMS.R} (Diabetes Mellitus Metabolic Simulator -- Research) egy kutatási célokra fejlesztett, professzionális metabolikus szimulátor. Az alkalmazás képes 1-es és 2-es típusú cukorbetegség, valamint a prediabétesz élettani folyamatait modellezni virtuális pácienseken. A szimulátor 55 virtuális alanyt tartalmaz, különböző betegcsoportokra bontva: 1-es típusú gyermek, serdülő és felnőtt, 2-es típusú felnőtt, valamint prediabéteszes felnőtt. Mindegyik alany egyedi, előre megadott anyagcsere-paraméterekkel rendelkezik. A szimulátor célja klinikai kísérletek előzetes és biztonságos támogatása.
+The DMMS.R (Diabetes Mellitus Metabolic Simulator - Research) is a professional metabolic simulator developed for research purposes. The application is capable of modeling the physiological processes of Type 1 and Type 2 Diabetes, as well as prediabetes, in virtual patients. The simulator includes 55 virtual subjects, categorized into different patient groups: Type 1 children, adolescents, and adults; Type 2 adults; and prediabetic adults. Each subject has unique, predefined metabolic parameters. The simulator's primary goal is to provide preliminary and safe support for clinical trials.
 
-\medskip
-A szimuláció alapját egy kompartmentalizált glükóz--inzulin anyagcsere modell képezi, amely a hormonok, vércukorszint és az inzulin dinamikáját perces időfelbontásban követi. A modell figyelembe veszi az étkezéseket, a fizikai aktivitást, az inzulinadagolást, a gyógyszeres kezelést és a cirkadián ritmust is. A rendszer támogatja az inzulin farmakokinetikáját és farmakodinamikáját, a biohasznosulást, a lassú felszabadulású készítményeket, valamint az aktív inzulin mennyiségének számítását.
+The simulation is based on a compartmentalized glucose-insulin metabolic model that tracks the dynamics of hormones, blood glucose levels, and insulin at minute-level time resolution. The model accounts for meals, physical activity, insulin administration, pharmacological treatment, and circadian rhythm. The system supports insulin pharmacokinetics and pharmacodynamics, bioavailability, slow-release formulations, and the calculation of the amount of active insulin (Insulin-On-Board).
 
-\section{Moduláris felépítés}
+The DMMS.R has a modular structure, consisting of three main components:
 
-A \textbf{DMMS.R moduláris felépítésű, három fő elemből áll:}
-\begin{enumerate}
-    \item Virtuális páciensek adatbázisa, amely tartalmazza a különböző anyagcsere-jellemzőket.
-    \item Matematikai szimulációs motor, amely kiszámítja a fiziológiai folyamatokat.
-    \item Grafikus felület, amelyen keresztül konfigurálható a szimuláció.
-\end{enumerate}
+\begin{itemize}
+    \item Virtual Patient Database: Contains the various metabolic characteristics.
+    \item Mathematical Simulation Engine: Calculates the physiological processes.
+    \item Graphical Interface: Used to configure the simulation.
+\end{itemize}
 
-\section{Konfigurálható szenzorok és vezérlők}
+The simulator allows for the configuration of various sensor, controller, and delivery elements:
 
-A szimulátor többféle szenzor-, vezérlő- és adagolóelem konfigurálását teszi lehetővé:
-\begin{enumerate}
-    \item Ideális és zajjal terhelt CGM és SMBG szenzorok.
-    \item Étkezési, korrekciós és bázisinzulin vezérlők.
-    \item Inzulinpumpák és injekciós adagoló rendszerek.
-\end{enumerate}
+\begin{itemize}
+    \item Ideal or noisy CGM and SMBG sensors (Continuous/Self-Monitoring of Blood Glucose).
+    \item Meal, correction, and basal insulin controllers.
+    \item Insulin pumps and injection delivery systems.
+\end{itemize}
 
-A programban megadhatók gyógyszeres kezelések, edzésprogramok és étkezések a páciensek számára. A szimuláció során zaj is alkalmazható a valós mérési és adagolási bizonytalanság modellezésére.
+Pharmacological treatments, exercise programs, and meals can be prescribed for the patients within the program. Noise can also be applied during the simulation to model real-world measurement and administration uncertainties.
 
-\section{Eredmények és felhasználás}
+The simulation results are presented through:
 
-A szimulációk eredményei részletes idősor-grafikonokon, \emph{CVGA} (Control-Variability Grid Analysis) elemzésen, valamint egyéni és populációs szintű statisztikai mutatókon jelennek meg. Az adatok \texttt{CSV} és \texttt{MATLAB} formátumban exportálhatók.
+\begin{itemize}
+    \item Detailed time-series graphs.
+    \item CVGA (Control-Variability Grid Analysis).
+    \item Individual and population-level statistical indicators.
+\end{itemize}
 
-A \textbf{DMMS.R} elsősorban kutatási, fejlesztési és orvostechnikai validációs célokat szolgál. Alkalmas inzulinpumpák, gyógyszeres terápiák és digitális diabétesz-menedzsment rendszerek előzetes vizsgálatára és tesztelésére, anélkül, hogy valós betegeken kellene kísérletezni. A program kifejezetten klinikai kutatási környezetbe készült.
+The data can be exported in CSV and MATLAB formats.
 
+The DMMS.R primarily serves research, development, and medical device validation purposes. It is suitable for the preliminary study and testing of insulin pumps, drug therapies, and digital diabetes management systems without the need for experimenting on real patients. The program is specifically designed for a clinical research environment.
 
-\section*{Szimulátorok összehasonlítása}
+\section{Comparing the two simulators}
 
 \begin{table}[h!]
 \centering
 \footnotesize
 \renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{l X X}
+\begin{tabularx}{\linewidth}{l X X}
 \hline
-\textbf{Szempont} & \textbf{py-mGIPsim} & \textbf{DMMS.R} \\
+\textbf{Aspect} & \textbf{py-mGIPsim} & \textbf{DMMS.R} \\
 \hline
-Fő cél &
-\makecell[l]{Oktatási, kutatási és fejlesztési\\célú, rugalmas szimuláció} &
-\makecell[l]{Klinikai kutatási és validációs célú,\\ professzionális szimulátor} \\
+Main purpose &
+\makecell[l]{Flexible simulation for\\research and development} &
+\makecell[l]{Professional simulator designed for\\clinical research and validation} \\
 
-Modellezett betegek &
-\makecell[l]{20 virtuális 1-es típusú\\cukorbeteg} &
-\makecell[l]{55 virtuális beteg: 1-es típus, 2-es típus,\\ prediabétesz} \\
+Modeled patients &
+\makecell[l]{20 virtual Type 1\\ diabetes patients} &
+\makecell[l]{55 virtual patients: Type 1, Type 2,\\ and prediabetes} \\
 
-Részletesség &
-\makecell[l]{Közepes–magas szintű\\fiziológiai modell} &
-\makecell[l]{Nagyon részletes, klinikailag orientált\\ kompartment modellek} \\
+Level of detail &
+\makecell[l]{Medium–high level\\ physiological model} &
+\makecell[l]{Highly detailed, clinically oriented\\ compartment models} \\
 
-Felhasználói felület &
-\makecell[l]{GUI, interaktív CMD,\\egyszerű CLI} &
-\makecell[l]{Dedikált grafikus felület} \\
+User interface &
+\makecell[l]{GUI, interactive CMD,\\ simple CLI} &
+\makecell[l]{Dedicated graphical interface} \\
 
-Terápia / vezérlés &
-\makecell[l]{MDI, SAP, Hybrid Closed-loop} &
-\makecell[l]{Inzulinpumpák, injekciók, CGM/SGBM,\\ gyógyszerek} \\
+Therapy / control &
+\makecell[l]{MDI, SAP,\\ Hybrid Closed-loop} &
+\makecell[l]{Insulin pumps, injections, CGM/SGBM,\\ medications} \\
 
-Zaj és realitás &
-\makecell[l]{Főként determinisztikus \\modellezés} &
-\makecell[l]{Mérési és adagolási zaj} \\
+Noise and realism &
+\makecell[l]{Primarily deterministic\\ modeling} &
+\makecell[l]{Measurement and dosing noise} \\
 
-Eredmények &
-\makecell[l]{Vércukor-időfüggvények, jól\\ vizualizálható kimenet} &
-\makecell[l]{Részletes idősorok, statisztikai elemzések} \\
+Outputs &
+\makecell[l]{Blood glucose time series,\\ well-visualizable results} &
+\makecell[l]{Detailed time series, statistical analyses} \\
 
-Bővíthetőség &
-\makecell[l]{Nagyon jól bővíthető, \\fejlesztőbarát} &
-\makecell[l]{Strukturált, klinikai környezethez kötött} \\
+Extensibility &
+\makecell[l]{Highly extensible,\\ developer-friendly} &
+\makecell[l]{Structured, tied to clinical environments} \\
 
-Technológia &
-\makecell[l]{Python, JIT-optimalizált futás} &
-\makecell[l]{Kutatásra fókuszált matematikai motor} \\
+Technology &
+\makecell[l]{Python, JIT-optimized\\execution} &
+\makecell[l]{Mathematical engine focused\\on research} \\
 \hline
 \end{tabularx}
 \end{table}
 
 
+\section*{Result on both simulators with the same inputs}
 
-\section*{Források}
+The objective of the experiment is to investigate how the insulin levels of 20 healthy adults change over the course of one day following three standardized meals. All participants receive the same amount of carbohydrates for breakfast, lunch, and dinner, ensuring that differences between the measured insulin responses are attributable solely to individual physiological variations.
+
+During the study, participants do not engage in exercise and are prohibited from consuming any snacks, treats, or supplementary foods. They receive only the three meals specified in the protocol:
 
 \begin{itemize}
-    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_diabetes_mellitus}
-    \item \url{https://hu.wikipedia.org/wiki/Cukorbetegs%C3%A9g#1-es_t%C3%ADpus%C3%BA_cukorbetegség}
+    \item Breakfast at 7:00 AM: 60 grams of carbohydrates
+    \item Lunch at 1:00 PM: 75 grams of carbohydrates
+    \item Dinner at 7:00 PM: 60 grams of carbohydrates
 \end{itemize}
 
-\end{document}
+The simulation is run for a duration of one day (24 hours).
 
+In subsequent experimental phases, a separate analysis will be performed to determine how the addition of snacks and the incorporation of physical activity modify the insulin response.
+
+\section{Simulation Inputs and Outputs}
+
+\subsection{Inputs}
+
+The input data for the simulations consists of the preprogrammed datasets provided by the simulators, along with the basal and bolus insulin values calculated individually for each patient based on their specific physiological needs. These values are highly personalized and vary significantly from person to person, making any corrections or adjustments particularly challenging to compute. This individualized variability is one of the reasons why clustering such data presents considerable difficulties.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1\linewidth]{gipsimBasal.png} % replace with your image
+    \caption{Graphical summary of input data showing variability among patients.}
+    \label{fig:input1}
+\end{figure}
+The figure above illustrates the basal insulin rates for all 20 patients over a 24-hour period.
+As can be observed in the graphs, there is no clear or direct correlation between body weight and the amount of insulin required by each individual. The insulin requirements are highly inconsistent across patients, though a general trend appears to emerge when analyzing different age groups. This indicates that age may play a more significant role than body weight in determining insulin needs.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1\linewidth]{gipsimBolus.png} % replace with your image
+    \caption{Correction boluses at breakfast, lunch, and dinner across patients.}
+    \label{fig:input2}
+\end{figure}
+
+The following figures below illustrate the correction boluses administered at breakfast, lunch, and dinner. Both sets of graphs demonstrate broadly similar trends; however, the differences between them reflect how each individual responds to bolus insulin. The second set of graphs is derived from the DMMS.R simulator, which includes data for children and adolescent patients. For our analysis, these younger age groups will not be simulated, and we will only compare ten patients from each simulator to ensure a fair comparison.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{gipsimBolus.png} % py-mGIPsim
+    \caption*{py-mGIPsim: Correction boluses at breakfast, lunch, and dinner.}
+    
+    \vspace{0.5em} % small vertical space between images
+    
+    \includegraphics[width=0.8\linewidth]{dmmsrBolus.png} % DMMS.R
+    \caption*{DMMS.R: Correction boluses at breakfast, lunch, and dinner.}
+    
+    \caption{Comparison of correction boluses from the two simulators. The top figure shows py-mGIPsim data, while the bottom shows DMMS.R data, which also includes children and adolescent patients.}
+    \label{fig:bolus_comparison}
+\end{figure}
+
+
+\subsection{Output}
+
+Having reviewed the input data and the graphical summaries for all 20 patients, we can now proceed to run the simulation. The first step is to examine the timeline of an individual patient, where the bolus insulin doses and carbohydrate intake events are explicitly labeled in relation to the full daily profile.
+
+
+
+After implementing several helper functions to extract the relevant information from both simulator outputs, we are able to compute key glucose-related features for each patient. This allows us to determine which individuals remained within the target glycemic range during the simulation period and which did not.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\linewidth]{gipsimPatientSpecific.png} % replace with your image
+    \caption{Daily insulin and carbohydrate profile for a representative patient. Time of Meals and Bolus Insulin doses are marked.}
+    \label{fig:patient_timeline}
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lrrrrrr}
+\hline
+Patient & Avg & Min & Max & In & Below & Above \\
+\hline
+person\_1 & 72.52 & 64.15 & 87.49 & 45.49 & 54.51 & 0.00 \\
+person\_2 & 83.51 & 72.45 & 101.49 & 100.00 & 0.00 & 0.00 \\
+person\_3 & 103.93 & 67.44 & 155.93 & 71.18 & 28.82 & 0.00 \\
+person\_4 & 78.64 & 61.38 & 103.96 & 67.57 & 32.43 & 0.00 \\
+person\_5 & 90.45 & 68.03 & 121.24 & 65.49 & 34.51 & 0.00 \\
+person\_6 & 80.85 & 74.87 & 90.48 & 100.00 & 0.00 & 0.00 \\
+person\_7 & 71.48 & 59.02 & 90.20 & 54.93 & 45.07 & 0.00 \\
+person\_8 & 80.51 & 69.84 & 99.25 & 99.03 & 0.97 & 0.00 \\
+person\_9 & 70.86 & 60.44 & 95.11 & 42.85 & 57.15 & 0.00 \\
+person\_10 & 96.66 & 72.35 & 131.13 & 100.00 & 0.00 & 0.00 \\
+person\_11 & 91.41 & 77.90 & 116.04 & 100.00 & 0.00 & 0.00 \\
+person\_12 & 77.43 & 62.67 & 101.28 & 64.10 & 35.90 & 0.00 \\
+person\_13 & 92.27 & 82.45 & 109.86 & 100.00 & 0.00 & 0.00 \\
+person\_14 & 77.13 & 71.34 & 83.70 & 100.00 & 0.00 & 0.00 \\
+person\_15 & 68.82 & 61.36 & 83.85 & 35.07 & 64.93 & 0.00 \\
+person\_16 & 94.18 & 70.03 & 125.14 & 100.00 & 0.00 & 0.00 \\
+person\_17 & 100.45 & 70.39 & 144.52 & 100.00 & 0.00 & 0.00 \\
+person\_18 & 71.57 & 64.82 & 88.99 & 46.11 & 53.89 & 0.00 \\
+person\_19 & 94.19 & 81.20 & 116.69 & 100.00 & 0.00 & 0.00 \\
+person\_20 & 73.05 & 66.30 & 78.95 & 77.29 & 22.71 & 0.00 \\
+\hline
+\end{tabular}
+\caption*{Avg: Average glucose level (mg/dL), Min: Minimum glucose level (mg/dL), Max: Maximum glucose level (mg/dL), In: Percentage of time within target range (70-180 mg/dL), Below: Percentage of time below target range (<70 mg/dL), Above: Percentage of time above target range (>180 mg/dL).}
+\label{tab:glucose_stats}
+\end{table}
+
+The results show that all patients spent the majority of their time within—or below—the designated glucose range, and none exceeded the upper threshold during this simulation run. Notably, most of the time spent below the target range occurred during the early hours of the day. This behavior contrasts with the DMMS.R simulator, where patients frequently dropped below the lower limit even during daytime periods.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1\linewidth]{gipsimGlucose.png}
+    \caption{Glucose trajectories for py-mGIPsim.}
+    \label{fig:gipsim_glucose}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1\linewidth]{dmmsrGlucose.png}
+    \caption{Glucose trajectories for patients in DMMS.R. The dataset includes children and adolescent patients. This figure is presented for comparison with py-mGIPsim.}
+    \label{fig:dmmsr_glucose}
+\end{figure}
+
+\section*{Summary}
+
+The goal of this project was to study and compare blood glucose dynamics in people with type 1 diabetes, focusing on how different metabolic simulators behave when the same inputs are used. A one-day simulation with a standardized meal plan was applied, and insulin and glucose responses were analyzed for virtual patients.
+
+The analysis of the input data showed that insulin needs vary greatly between individuals and do not have a clear relationship with body weight. Age appeared to have a stronger influence. This large variability is similar to what is seen in real clinical practice and makes clustering the data more challenging.
+
+The simulation results showed that, in both simulators, patients spent most of their time within the target blood glucose range of 70--180 mg/dL. However, differences were observed between the two models. In the py-mGIPsim simulations, low blood glucose levels mainly occurred in the early morning, while in the DMMS.R simulations, low glucose values were more common during the daytime. These differences highlight how the structure of the model, the level of physiological detail, and the way uncertainty and noise are handled can strongly affect simulation results.
+
+\section*{Plans for future work}
+The planned future work is to extend the simulations by adding snack intake and physical exercise, making the scenarios more realistic. In addition, clustering methods will be applied to the simulation results in order to group patients based on their blood glucose dynamics and identify common patterns in behavior.
+
+\clearpage
+\begin{thebibliography}{1}
+
+\bibitem{diabetes_type1}
+Understanding Type 1 Diabetes | ADA.
+\\URL: https://diabetes.org/about-diabetes/type-1
+
+\bibitem{treatment_type1}
+Management and treatment.
+Cleveland Clinic.
+URL: https://my.clevelandclinic.org/health/diseases/21500-type-1-diabetes
+
+
+
+\end{thebibliography}
+
+\end{document}

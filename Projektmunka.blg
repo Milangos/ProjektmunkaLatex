@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Projektmunka.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainurl.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: references.bib
+Warning--to sort, need author or key in diabetes_type1
+Warning--to sort, need author or key in treatment_type1
+Warning--empty author in treatment_type1
+Warning--empty year in treatment_type1
+Warning--empty author in diabetes_type1
+Warning--empty journal in diabetes_type1
+Warning--empty year in diabetes_type1
+You've used 2 entries,
+            2943 wiz_defined-function locations,
+            640 strings with 5319 characters,
+and the built_in function-call counts, 612 in all, are:
+= -- 54
+> -- 6
+< -- 0
++ -- 2
+- -- 0
+* -- 35
+:= -- 89
+add.period$ -- 5
+call.type$ -- 2
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 24
+empty$ -- 72
+format.name$ -- 0
+if$ -- 166
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 12
+num.names$ -- 0
+pop$ -- 24
+preamble$ -- 1
+purify$ -- 4
+quote$ -- 0
+skip$ -- 50
+stack$ -- 0
+substring$ -- 10
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 7
+while$ -- 0
+width$ -- 3
+write$ -- 18
+(There were 7 warnings)
