@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  9 DEC 2025 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.9)  11 DEC 2025 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,9 +490,26 @@ Package hyperref Info: Link coloring OFF on input line 17.
 \openout3 = `vercukorszint_klaszterezes.out'.
 
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 59.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 59.
+
+
 Underfull \hbox (badness 1448) in paragraph at lines 61--62
 []\T1/ptm/m/n/10 Type 1 di-a-betes is an au-toim-mune dis-ease in which
  []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 69.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
 
@@ -504,11 +521,24 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
  (D:\latex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 88.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 88.
+
 [1{C:/Users/szabo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/latex/fo
 nts/enc/dvips/base/8r.enc}
 
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 114.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 []\T1/ptm/m/n/10 Ideal or noisy CGM and SMBG sen-sors
  []
@@ -519,32 +549,17 @@ Overfull \hbox (6.49118pt too wide) in paragraph at lines 196--196
  []
 
 
-Overfull \hbox (37.6266pt too wide) in paragraph at lines 196--196
+Overfull \hbox (10.68312pt too wide) in paragraph at lines 196--196
 |[][]
  []
 
 
-Overfull \hbox (38.0832pt too wide) in paragraph at lines 196--196
+Overfull \hbox (6.61075pt too wide) in paragraph at lines 196--196
 |[][]
  []
 
 
-Overfull \hbox (35.62653pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
-
-Overfull \hbox (17.38676pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
-
-Overfull \hbox (53.87451pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
-
-Overfull \hbox (23.40295pt too wide) in paragraph at lines 196--196
+Overfull \hbox (8.26678pt too wide) in paragraph at lines 196--196
 |[][]
  []
 
@@ -553,37 +568,24 @@ Overfull \hbox (8.52286pt too wide) in paragraph at lines 196--196
 |[][]
  []
 
-
-Overfull \hbox (51.75378pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
-
-Overfull \hbox (53.21849pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
-
-Overfull \hbox (17.48277pt too wide) in paragraph at lines 196--196
-|[][]
- []
-
 [2]
-<gipsimBasal.png, id=46, 859.2903pt x 426.393pt>
-File: gipsimBasal.png Graphic file (type png)
-<use gipsimBasal.png>
-Package pdftex.def Info: gipsimBasal.png  used on input line 224.
+<gipsimBasalSortedByWeight.png, id=63, 859.2903pt x 426.393pt>
+File: gipsimBasalSortedByWeight.png Graphic file (type png)
+<use gipsimBasalSortedByWeight.png>
+Package pdftex.def Info: gipsimBasalSortedByWeight.png  used on input line 224.
+
 (pdftex.def)             Requested size: 252.0pt x 125.04312pt.
-<gipsimBolus.png, id=48, 1076.1003pt x 498.663pt>
-File: gipsimBolus.png Graphic file (type png)
-<use gipsimBolus.png>
-Package pdftex.def Info: gipsimBolus.png  used on input line 233.
+<dmmsrBasal.png, id=66, 1076.1003pt x 498.663pt>
+File: dmmsrBasal.png Graphic file (type png)
+<use dmmsrBasal.png>
+Package pdftex.def Info: dmmsrBasal.png  used on input line 233.
 (pdftex.def)             Requested size: 252.0pt x 116.77493pt.
+<gipsimBolus.png, id=68, 1076.1003pt x 498.663pt>
 File: gipsimBolus.png Graphic file (type png)
 <use gipsimBolus.png>
 Package pdftex.def Info: gipsimBolus.png  used on input line 242.
 (pdftex.def)             Requested size: 201.60077pt x 93.41537pt.
-<dmmsrBolus.png, id=49, 1076.1003pt x 498.663pt>
+<dmmsrBolus.png, id=69, 1076.1003pt x 498.663pt>
 File: dmmsrBolus.png Graphic file (type png)
 <use dmmsrBolus.png>
 Package pdftex.def Info: dmmsrBolus.png  used on input line 247.
@@ -593,43 +595,44 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 
+l.258 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 
+l.258 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 
+l.258 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 
+l.258 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 
-       <./gipsimBasal.png> <./gipsimBolus.png> <./dmmsrBolus.png>]
-<gipsimPatientSpecific.png, id=62, 706.64pt x 480.79625pt>
+l.258 
+       <./gipsimBasalSortedByWeight.png> <./dmmsrBasal.png> <./gipsimBolus.png>
+ <./dmmsrBolus.png>]
+<gipsimPatientSpecific.png, id=84, 706.64pt x 480.79625pt>
 File: gipsimPatientSpecific.png Graphic file (type png)
 <use gipsimPatientSpecific.png>
 Package pdftex.def Info: gipsimPatientSpecific.png  used on input line 265.
 (pdftex.def)             Requested size: 189.0pt x 128.59154pt.
-<gipsimGlucose.png, id=63, 859.2903pt x 426.393pt>
+<gipsimGlucose.png, id=85, 859.2903pt x 426.393pt>
 File: gipsimGlucose.png Graphic file (type png)
 <use gipsimGlucose.png>
 Package pdftex.def Info: gipsimGlucose.png  used on input line 309.
 (pdftex.def)             Requested size: 252.0pt x 125.04312pt.
-<dmmsrGlucose.png, id=64, 1000.9395pt x 570.933pt>
+<dmmsrGlucose.png, id=86, 1000.9395pt x 570.933pt>
 File: dmmsrGlucose.png Graphic file (type png)
 <use dmmsrGlucose.png>
 Package pdftex.def Info: dmmsrGlucose.png  used on input line 316.
@@ -639,31 +642,32 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.331 
+l.328 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.331 
+l.328 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.331 
+l.328 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.331 
+l.328 
        <./gipsimPatientSpecific.png (PNG copy)> <./gipsimGlucose.png> <./dmmsrG
 lucose.png>] [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 340--343
-[]\T1/ptm/m/n/8 Management and treat-ment. Cleve-land Clinic. URL:
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
+\T1/ptm/m/n/8 URL: []$https : / / my . clevelandclinic . org / health / disease
+s /
  []
 
 
@@ -687,22 +691,22 @@ L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `vercukorszint_klaszterezes.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 33BF72690711C133447F471D34999963;657.
+(rerunfilecheck)             Checksum: EE70CE838E91C12E584D9AD4810ED816;1534.
  ) 
 Here is how much of TeX's memory you used:
- 12307 strings out of 467870
- 189879 string characters out of 5435671
- 634511 words of memory out of 5000000
- 40995 multiletter control sequences out of 15000+600000
+ 12327 strings out of 467870
+ 190268 string characters out of 5435671
+ 635851 words of memory out of 5000000
+ 41013 multiletter control sequences out of 15000+600000
  738942 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,17n,79p,721b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,17n,79p,721b,458s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/latex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/latex/fonts/type1/urw/
 times/utmb8a.pfb><D:/latex/fonts/type1/urw/times/utmbi8a.pfb><D:/latex/fonts/ty
 pe1/urw/times/utmr8a.pfb><D:/latex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on vercukorszint_klaszterezes.pdf (6 pages, 455257 bytes).
+Output written on vercukorszint_klaszterezes.pdf (6 pages, 505832 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 143 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

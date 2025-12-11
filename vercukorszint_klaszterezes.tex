@@ -48,44 +48,44 @@ szaszdavid@stud.uni-obuda.hu}
 \maketitle
 
 \begin{abstract}
-This document presents the clustering analysis of Type 1 Diabetes and the associated metabolic simulators. We introduce the py-mGIPsim and DMMS.R systems and provide a comparative overview of their functionalities.
+This document presents the clustering analysis of Type 1 Diabetes and the associated metabolic simulators. We introduce the py-mGIPsim and DMMS.R systems and provide a comparative overview of their functionalities. Our planned future work includes extending the simulations with snack intake and physica exercise, as well as applying clustering methods to the simulation results to identify common patterns in blood glucose dynamics among patients.
 \end{abstract}
 
 
 \begin{IEEEkeywords}
-cukorbetegség, 1-es típus, szimulátor, metabolikus modell, DMMS.R, py-mGIPsim
+diabetes, type-1, simulator, metabolic model, DMMS.R, py-mGIPsim, clustering
 \end{IEEEkeywords}
 
-\section*{Type 1 diabetes\cite{diabetes_type1}}
+\section{Type 1 diabetes\cite{diabetes_type1}}
 
 Type 1 diabetes is an autoimmune disease in which the body’s immune system mistakenly attacks the insulin-producing beta cells in the pancreas. These beta cells make insulin, a hormone that allows blood sugar (glucose) to enter the body’s cells and provide energy. When enough beta cells are destroyed, the pancreas produces little or no insulin, making it necessary to take insulin to survive.
 
 Without sufficient insulin, glucose cannot move from the bloodstream into the cells, causing blood sugar levels to rise. This condition, called hyperglycemia, can lead to long-term damage to the heart, kidneys, eyes, nerves, and other organs if left untreated.
 
-Type 1 diabetes is often diagnosed in children, teenagers, and young adults, but it can develop at any age. The exact cause of the disease is not fully understood, and researchers are still studying what triggers the immune system to attack the pancreas. Currently, there is no known way to prevent type 1 diabetes.
+Type 1 diabetes is often diagnosed during childhood or adolescence \cite{diabetes_type1}, but it can develop at any age. The exact cause of the disease is not fully understood, and researchers are still studying what triggers the immune system to attack the pancreas. Currently, there is no known way to prevent type 1 diabetes.
 
 People with type 1 diabetes can live long and healthy lives by carefully managing their condition. A treatment plan, developed with a healthcare team, usually includes taking insulin, following a balanced diet, staying physically active, and monitoring blood glucose levels regularly. Having a strong support system from family, friends, and healthcare providers is also essential for maintaining health and achieving personal goals.
 
-\section*{Treatment of Type 1 diabetes\cite{treatment_type1}}
+\section{Treatment of Type 1 diabetes\cite{treatment_type1}}
 
-Managing Type 1 diabetes (T1D) primarily revolves around insulin therapy, which replaces the insulin your body no longer produces. Since T1D is a self-managed condition, you'll make daily decisions about your insulin needs to keep your blood sugar levels in a target range.
+Managing Type 1 diabetes (T1D) primarily revolves around insulin therapy, which replaces the insulin the body no longer produces. Since T1D is a self-managed condition, patients make daily decisions about their insulin needs to maintain blood sugar levels within a target range.
 
-Insulin comes in various forms, each with different speeds of onset and duration of action. You'll likely need a combination:
-
-\begin{itemize}
-    \item Basal Insulin (Long-Acting): Provides a continuous, background level of insulin to manage glucose between meals and overnight.
-    \item Bolus Insulin (Mealtime and Correction): Specific doses you take when you eat (to cover carbohydrates) and to correct elevated blood sugar levels.
-\end{itemize}
-
-You can administer insulin in several ways:
+Insulin comes in various forms, each with different speeds of onset and duration of action. Patients typically require a combination of \cite{treatment_type1}:
 
 \begin{itemize}
-    \item Multiple Daily Injections (MDI): Involves drawing a dose from an insulin vial using a syringe for injection into the fatty tissue beneath the skin.
-    \item Insulin Pens: Pre-filled devices used to inject specific doses into the fatty tissue.
-    \item Insulin Pumps: A device that delivers insulin continuously through a small tube inserted under the skin, aiming to mimic the natural function of the pancreas. Doses can also be delivered on demand.
+\item Basal Insulin (Long-Acting): Provides a continuous, background level of insulin to manage glucose between meals and overnight.
+\item Bolus Insulin (Mealtime and Correction): Specific doses taken when eating (to cover carbohydrate intake) and to correct elevated blood sugar levels.
 \end{itemize}
 
-\section*{First simulator: py-mGIPsim}
+Insulin can be administered in several ways:
+
+\begin{itemize}
+\item Multiple Daily Injections (MDI): Involves drawing a dose from an insulin vial using a syringe for injection into the fatty tissue beneath the skin.
+\item Insulin Pens: Pre-filled devices used to inject specific doses into the fatty tissue.
+\item Insulin Pumps: Devices that deliver insulin continuously through a small tube inserted under the skin, aiming to mimic the natural function of the pancreas. Additional doses can also be delivered on demand.
+\end{itemize}
+
+\section{First simulator: py-mGIPsim\cite{py_mgipsim}}
 
 The mGIPsim (Metabolic Glucose-Insulin Physiology Simulator) is an open-source metabolic simulator that models the changes in blood glucose and insulin levels of 20 virtual Type 1 Diabetes (T1D) patients under various therapeutic, dietary, and physical activity conditions. The system's purpose is to provide a realistic simulation environment for research, education, and development purposes, where users can examine the dynamics of glucose-insulin regulation using customizable parameters.
 
@@ -111,7 +111,7 @@ By varying parameters for meals, exercise, and insulin administration, the simul
 
 The project is a valuable tool for research and development for testing insulin dosing algorithms, simulating diabetes management strategies, and teaching digital healthcare systems. For developers, the modular code structure and documented API interface allow for the integration of new models or the customization of the simulation logic.
 
-\section*{Second simulator: DMMS.R}
+\section{Second simulator: DMMS.R\cite{dmmsr}}
 
 The DMMS.R (Diabetes Mellitus Metabolic Simulator - Research) is a professional metabolic simulator developed for research purposes. The application is capable of modeling the physiological processes of Type 1 and Type 2 Diabetes, as well as prediabetes, in virtual patients. The simulator includes 55 virtual subjects, categorized into different patient groups: Type 1 children, adolescents, and adults; Type 2 adults; and prediabetic adults. Each subject has unique, predefined metabolic parameters. The simulator's primary goal is to provide preliminary and safe support for clinical trials.
 
@@ -159,39 +159,39 @@ The DMMS.R primarily serves research, development, and medical device validation
 \hline
 Main purpose &
 \makecell[l]{Flexible simulation for\\research and development} &
-\makecell[l]{Professional simulator designed for\\clinical research and validation} \\
+\makecell[l]{Professional simulator \\ designed for\\clinical research and\\validation} \\
 
 Modeled patients &
 \makecell[l]{20 virtual Type 1\\ diabetes patients} &
-\makecell[l]{55 virtual patients: Type 1, Type 2,\\ and prediabetes} \\
+\makecell[l]{55 virtual patients: Type 1,\\ Type 2,\\ and prediabetes} \\
 
 Level of detail &
 \makecell[l]{Medium–high level\\ physiological model} &
-\makecell[l]{Highly detailed, clinically oriented\\ compartment models} \\
+\makecell[l]{Highly detailed, clinically\\ oriented\\ compartment models} \\
 
 User interface &
 \makecell[l]{GUI, interactive CMD,\\ simple CLI} &
-\makecell[l]{Dedicated graphical interface} \\
+\makecell[l]{Dedicated graphical\\interface} \\
 
 Therapy / control &
 \makecell[l]{MDI, SAP,\\ Hybrid Closed-loop} &
-\makecell[l]{Insulin pumps, injections, CGM/SGBM,\\ medications} \\
+\makecell[l]{Insulin pumps, injections, \\ CGM/SGBM, medications} \\
 
 Noise and realism &
 \makecell[l]{Primarily deterministic\\ modeling} &
-\makecell[l]{Measurement and dosing noise} \\
+\makecell[l]{Measurement and\\dosing noise} \\
 
 Outputs &
 \makecell[l]{Blood glucose time series,\\ well-visualizable results} &
-\makecell[l]{Detailed time series, statistical analyses} \\
+\makecell[l]{Detailed time series,\\ statistical analyses} \\
 
 Extensibility &
 \makecell[l]{Highly extensible,\\ developer-friendly} &
-\makecell[l]{Structured, tied to clinical environments} \\
+\makecell[l]{Structured, tied to \\ clinical environments} \\
 
 Technology &
 \makecell[l]{Python, JIT-optimized\\execution} &
-\makecell[l]{Mathematical engine focused\\on research} \\
+\makecell[l]{Mathematical engine\\ focused on research} \\
 \hline
 \end{tabularx}
 \end{table}
@@ -201,7 +201,7 @@ Technology &
 
 The objective of the experiment is to investigate how the insulin levels of 20 healthy adults change over the course of one day following three standardized meals. All participants receive the same amount of carbohydrates for breakfast, lunch, and dinner, ensuring that differences between the measured insulin responses are attributable solely to individual physiological variations.
 
-During the study, participants do not engage in exercise and are prohibited from consuming any snacks, treats, or supplementary foods. They receive only the three meals specified in the protocol:
+During the simulation, the virtual patients do not engage in exercise and are prohibited from consuming any snacks, treats, or supplementary foods. They receive only the three meals specified in the protocol:
 
 \begin{itemize}
     \item Breakfast at 7:00 AM: 60 grams of carbohydrates
@@ -217,25 +217,25 @@ In subsequent experimental phases, a separate analysis will be performed to dete
 
 \subsection{Inputs}
 
-The input data for the simulations consists of the preprogrammed datasets provided by the simulators, along with the basal and bolus insulin values calculated individually for each patient based on their specific physiological needs. These values are highly personalized and vary significantly from person to person, making any corrections or adjustments particularly challenging to compute. This individualized variability is one of the reasons why clustering such data presents considerable difficulties.
+The input data for the simulations consists of the existing datasets provided by the simulators, which are the basal and bolus insulin values calculated individually for each patient based on their specific physiological needs. Modifying these inputs is possible when using mGIPsim, but quite difficult with DMMS.R. These values are highly personalized and vary significantly from person to person, making any corrections or adjustments particularly challenging to compute. This individualized variability is one of the reasons why clustering such data presents considerable difficulties.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=1\linewidth]{gipsimBasal.png} % replace with your image
-    \caption{Graphical summary of input data showing variability among patients.}
+    \includegraphics[width=1\linewidth]{gipsimBasalSortedByWeight.png} % replace with your image
+    \caption{Graphical summary of input data showing variability among patients. Basal insulin rates over 24 hours for all 20 patients, sorted by body weight. Clearly, there is no direct correlation between body weight and insulin needs.}
     \label{fig:input1}
 \end{figure}
-The figure above illustrates the basal insulin rates for all 20 patients over a 24-hour period.
+The figure above~\ref{fig:input1} illustrates the basal insulin rates for all 20 patients over a 24-hour period.
 As can be observed in the graphs, there is no clear or direct correlation between body weight and the amount of insulin required by each individual. The insulin requirements are highly inconsistent across patients, though a general trend appears to emerge when analyzing different age groups. This indicates that age may play a more significant role than body weight in determining insulin needs.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=1\linewidth]{gipsimBolus.png} % replace with your image
-    \caption{Correction boluses at breakfast, lunch, and dinner across patients.}
+    \includegraphics[width=1\linewidth]{dmmsrBasal.png} % replace with your image
+    \caption{Basal insulin rates for all 10 children, 10 adolescence and 10 adult patients in DMMS.R over a 24-hour period. No immediate correlation is observable again, but age groups do show influence.}
     \label{fig:input2}
 \end{figure}
 
-The following figures below illustrate the correction boluses administered at breakfast, lunch, and dinner. Both sets of graphs demonstrate broadly similar trends; however, the differences between them reflect how each individual responds to bolus insulin. The second set of graphs is derived from the DMMS.R simulator, which includes data for children and adolescent patients. For our analysis, these younger age groups will not be simulated, and we will only compare ten patients from each simulator to ensure a fair comparison.
+The following figures below~\ref{fig:bolus_comparison} illustrate the correction boluses administered at breakfast, lunch, and dinner. Both sets of graphs demonstrate broadly similar trends; however, the differences between them reflect how each individual responds to bolus insulin. The second set of graphs is derived from the DMMS.R simulator, which includes data for children and adolescent patients. For our analysis, these younger age groups will not be simulated, and we will only compare ten patients from each simulator to ensure a fair comparison.
 
 \begin{figure}[!ht]
     \centering
@@ -333,16 +333,22 @@ The planned future work is to extend the simulations by adding snack intake and 
 \begin{thebibliography}{1}
 
 \bibitem{diabetes_type1}
-Understanding Type 1 Diabetes | ADA.
-\\URL: https://diabetes.org/about-diabetes/type-1
+Understanding Type 1 Diabetes | ADA.\\
+URL: \url{https://diabetes.org/about-diabetes/type-1}
 
 \bibitem{treatment_type1}
-Management and treatment.
-Cleveland Clinic.
-URL: https://my.clevelandclinic.org/health/diseases/21500-type-1-diabetes
+Management and treatment. Cleveland Clinic.\\
+URL: \url{https://my.clevelandclinic.org/health/diseases/21500-type-1-diabetes}
 
+\bibitem{py_mgipsim}
+py-mGIPsim: A Python-Based Metabolic Simulator.\\
+URL: \url{https://illinoistech-itm.github.io/py-mgipsim/}
 
+\bibitem{dmmsr}
+DMMS.R: Diabetes Mellitus Metabolic Simulator in R.\\
+URL: \url{https://tegvirginia.com/dmms-r/}
 
 \end{thebibliography}
+
 
 \end{document}
